@@ -8,12 +8,8 @@ public class CartApp {
 	private static Set<Product> productSet;
 
 	public static void main(String[] args) {
-		List<Product> products = List.of(
-			new Product("상품1", 1000),
-			new Product("상품2", 2000),
-			new Product("상품3", 3000),
-			new Product("상품4", 4000)
-		);
+		ProductFactory productFactory = new ProductFactory();
+		List<Product> products = productFactory.getProductsFromCsvFilePath("./data.csv");
 
 		productSet = new HashSet<>(products);
 
